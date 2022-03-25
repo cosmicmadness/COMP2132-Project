@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Project </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/project.css">
+	<style>
+	</style>
+    <script src="scripts/jquery-3.4.1.min.js" defer></script>
+	<script src="scripts/javascript.js" defer="defer"></script>
+    <script src="scripts/hangman_script.js" defer="defer"></script>
+
+</head>
+
+<body>
+
+	<header>
+		<h1>Project</h1>
+	</header>
+
+
+
+	<div class="container">
+
+        <canvas id="hangman" width="180" height="250">
+        </canvas>
+
+
+        <div id="guess">
+            <!-- Blank letter cards go here -->
+        </div>
+
+        <div id="hint-container">
+            <p id="hint"></p>
+        </div>
+
+        <div>
+            <p id="numGuesses">Number of guesses left: <span id="numberGuesses">7</span>/ <span id="totalGuesses"></span></p>
+        </div>
+
+        <div id="keyboard-container">
+            <div class="keys-row">
+                <button class="keys neonText" id="Q">Q</button>
+                <button class="keys neonText" id="W">W</button>
+                <button class="keys neonText" id="E">E</button>
+                <button class="keys neonText" id="R">R</button>
+                <button class="keys neonText" id="T">T</button>
+                <button class="keys neonText" id="Y">Y</button>
+                <button class="keys neonText" id="U">U</button>
+                <button class="keys neonText" id="I">I</button>
+                <button class="keys neonText" id="O">O</button>
+                <button class="keys neonText" id="P">P</button>
+            </div>
+            <div class="keys-row">
+                <button class="keys neonText" id="A">A</button>
+                <button class="keys neonText" id="S">S</button>
+                <button class="keys neonText" id="D">D</button>
+                <button class="keys neonText" id="F">F</button>
+                <button class="keys neonText" id="G">G</button>
+                <button class="keys neonText" id="H">H</button>
+                <button class="keys neonText" id="J">J</button>
+                <button class="keys neonText" id="K">K</button>
+                <button class="keys neonText" id="L">L</button>
+            </div>
+            <div class="keys-row">
+                <button class="keys neonText" id="Z">Z</button>
+                <button class="keys neonText" id="X">X</button>
+                <button class="keys neonText" id="C">C</button>
+                <button class="keys neonText" id="V">V</button>
+                <button class="keys neonText" id="B">B</button>
+                <button class="keys neonText" id="N">N</button>
+                <button class="keys neonText" id="M">M</button>
+            </div>
+
+        </div>
+
+        <div id="popup-container">
+            <div id="popup">
+                <div id="popup-header">
+                    <h3>Hello, User</h3>
+                    <button id="close-button">X</button>
+                </div>
+                <div id="popup-body">
+                    <p>Instructions:</p>
+                    <p>To rotate the view of the bike click on the 'Start' animation button. Stop the animation by clicking the 'Stop' button.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+	</div>
+
+
+
+
+</body>
+</html>
