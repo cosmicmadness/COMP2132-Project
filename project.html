@@ -7,17 +7,18 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/project.css">
 	<style>
 	</style>
     <script src="scripts/jquery-3.4.1.min.js" defer></script>
-	<script src="scripts/javascript.js" defer="defer"></script>
     <script src="scripts/hangman_script.js" defer="defer"></script>
+	<script src="scripts/javascript.js" defer="defer"></script>
+
 
 </head>
 
 <body>
-
 	<header>
 		<h1>Project</h1>
 	</header>
@@ -26,23 +27,24 @@
 
 	<div class="container">
 
+        <div class="item-container">
+            <p id="title">Hangman</p>
+        </div>
+
         <canvas id="hangman" width="180" height="250">
         </canvas>
 
-
-        <div id="guess">
-            <!-- Blank letter cards go here -->
-        </div>
-
-        <div id="hint-container">
+        <div class="guess-container">
+            <div id="guess">
+                <!-- Blank letter cards go here -->
+            </div>
             <p id="hint"></p>
+            <p id="numGuesses">Number of guesses left: <span id="numberGuesses">7</span> / <span id="totalGuesses"></span></p>
         </div>
 
-        <div>
-            <p id="numGuesses">Number of guesses left: <span id="numberGuesses">7</span>/ <span id="totalGuesses"></span></p>
-        </div>
 
-        <div id="keyboard-container">
+
+        <div class="item-container">
             <div class="keys-row">
                 <button class="keys neonText" id="Q">Q</button>
                 <button class="keys neonText" id="W">W</button>
@@ -81,12 +83,12 @@
         <div id="popup-container">
             <div id="popup">
                 <div id="popup-header">
-                    <h3>Hello, User</h3>
+                    <h3 id="play-outcome"></h3>
                     <button id="close-button">X</button>
                 </div>
                 <div id="popup-body">
-                    <p>Instructions:</p>
                     <p>To rotate the view of the bike click on the 'Start' animation button. Stop the animation by clicking the 'Stop' button.</p>
+                    <button id="play-again-button">Play Again</button>
                 </div>
             </div>
         </div>

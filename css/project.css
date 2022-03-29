@@ -59,6 +59,87 @@ button:disabled:hover {
 }
 */
 
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#title {
+	color: white;
+	font-family: "Vibur", sans-serif;
+	font-size: 54pt;
+	animation: pulsate 1.5s infinite alternate;  
+	border: 0.2rem solid #fff;
+	border-radius: 2rem;
+	padding: 0.4em;
+	box-shadow: 
+		0 0 .2rem #fff,
+		0 0 .2rem #fff,
+		0 0 2rem #bc13fe,
+		0 0 0.8rem #bc13fe,
+		0 0 2.8rem #bc13fe,
+		inset 0 0 1.3rem #bc13fe; 
+}
+
+@keyframes pulsate {
+    
+	100% {
+		text-shadow:
+		0 0 4px #fff,
+		0 0 11px #fff,
+		0 0 19px #fff,
+		0 0 40px #bc13fe,
+		0 0 80px #bc13fe,
+		0 0 90px #bc13fe,
+		0 0 100px #bc13fe,
+		0 0 150px #bc13fe;
+	}
+	
+	0% {
+	  text-shadow:
+	  0 0 2px #fff,
+	  0 0 4px #fff,
+	  0 0 6px #fff,
+	  0 0 10px #bc13fe,
+	  0 0 45px #bc13fe,
+	  0 0 55px #bc13fe,
+	  0 0 70px #bc13fe,
+	  0 0 80px #bc13fe;
+  }
+}
+
+.item-container {
+	padding: 0px;
+}
+
+.guess-container {
+	border: 1px solid blue;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #010a01;
+	box-shadow: 
+		0 0 .2rem #fff,
+		0 0 .2rem #fff,
+		0 0 0.5rem blue,
+		0 0 0.5rem blue,
+		0 0 0.5rem blue,
+		inset 0 0 0.2rem blue;
+}
+
+
+.guess-container > p {
+	margin: 0px;
+}
+
+
+
+
 .neonText {
 	color: #fff;
 	border-radius: 50%;
@@ -148,17 +229,6 @@ button:hover {
 
 
 
-.container {
-	/*
-	display: flex;
-	flex-flow: wrap;
-	justify-content: center;
-	align-items: center;
-	*/
-
-	display: block;
-	text-align: center;
-}
 
 
 .keys-row {
