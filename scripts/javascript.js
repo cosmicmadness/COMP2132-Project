@@ -72,10 +72,12 @@ const numGuessesLeft = document.getElementById("numberGuesses");
 const totalGuesses = document.getElementById("totalGuesses");
 const playOutcome = document.getElementById("play-outcome");
 
+
 // Popup
 const popup = document.getElementById("popup");
 const popupContainer = document.getElementById("popup-container");
 const closeButton = document.getElementById("close-button");
+const playAgainButton = document.getElementById("play-again-button");
 
 
 
@@ -99,12 +101,8 @@ let indicesLength = 0;
 /*-------------------------------------------
 Start the game when the browser loads
 ---------------------------------------------*/
+startGame();
 
-// Run the randomWord function to select a word for the game
-randomWord();
-
-// Draw the gallows when the game starts
-initiateHangman();
 
 
 /*-------------------------------------------
@@ -128,18 +126,90 @@ function randomWord() {
     hint.innerHTML = "Hint: " + hintBank[chosenIndex];
 }
 
+// Function to reset the game
+function startGame() {
+    newHangman();
+    totalLife = 6;
+    currentLife = 6;
+    numCorrectLetters = 0;
+    totalGuesses.innerHTML = totalLife;
+    numGuessesLeft.innerHTML = currentLife;
+    wordReveal.innerHTML = "";
+
+    // Enable all keys
+    keyA.disabled = false;
+    keyB.disabled = false;
+    keyC.disabled = false;
+    keyD.disabled = false;
+    keyE.disabled = false;
+    keyF.disabled = false;
+    keyG.disabled = false;
+    keyH.disabled = false;
+    keyI.disabled = false;
+    keyJ.disabled = false;
+    keyK.disabled = false;
+    keyL.disabled = false;
+    keyM.disabled = false;
+    keyN.disabled = false;
+    keyO.disabled = false;
+    keyP.disabled = false;
+    keyQ.disabled = false;
+    keyR.disabled = false;
+    keyS.disabled = false;
+    keyT.disabled = false;
+    keyU.disabled = false;
+    keyV.disabled = false;
+    keyW.disabled = false;
+    keyX.disabled = false;
+    keyY.disabled = false;
+    keyZ.disabled = false;
+
+    // Change key colors
+    keyA.style.color = "white";
+    keyB.style.color = "white";
+    keyC.style.color = "white";
+    keyD.style.color = "white";
+    keyE.style.color = "white";
+    keyF.style.color = "white";
+    keyG.style.color = "white";
+    keyH.style.color = "white";
+    keyI.style.color = "white";
+    keyJ.style.color = "white";
+    keyK.style.color = "white";
+    keyL.style.color = "white";
+    keyM.style.color = "white";
+    keyN.style.color = "white";
+    keyO.style.color = "white";
+    keyP.style.color = "white";
+    keyQ.style.color = "white";
+    keyR.style.color = "white";
+    keyS.style.color = "white";
+    keyT.style.color = "white";
+    keyU.style.color = "white";
+    keyV.style.color = "white";
+    keyW.style.color = "white";
+    keyX.style.color = "white";
+    keyY.style.color = "white";
+    keyZ.style.color = "white";
 
 
+    // Run the randomWord function to select a word for the game
+    randomWord();
+
+    // Draw the gallows when the game starts
+    initiateHangman();
+}
+
+// Function to check if the guess was correct
 function guessLetter() {
     let guessedLetter = this.id;
     if(chosenWord.includes(guessedLetter)) {
         revealLetter(guessedLetter);
         disableKey(guessedLetter);
-
     } else {
         reduceLife();
-        disableKey(guessedLetter);
         drawHangman();
+        disableKey(guessedLetter);
     }
 }
 
@@ -198,7 +268,7 @@ function displayGameOverMessage(outcome) {
     if(outcome=="win") {
         playOutcome.innerHTML = "You Win!";
     } else {
-        playOutcome.innerHTML = "You Lose!";
+        playOutcome.innerHTML = "You Lost!";
     }
 
     popupContainer.style.display = "block";
@@ -218,4 +288,13 @@ closeButton.addEventListener("click", function() {
     clearInterval(opacityHandler);
     popup.style.opacity = 0;
     popupContainer.style.display = "none";
-})
+});
+
+// Click the Play Again button to start the game again
+playAgainButton.addEventListener("click", function() {
+    clearTimeout(popupHandler);
+    clearInterval(opacityHandler);
+    popup.style.opacity = 0;
+    popupContainer.style.display = "none";
+    startGame();
+});

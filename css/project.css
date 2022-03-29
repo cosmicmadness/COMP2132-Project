@@ -208,6 +208,10 @@ button:disabled:hover {
 	background-color: #010a01;
 }
 
+#play-again-button {
+	width: 100px;
+	border-radius: 10px;
+}
 
 
 .keys {

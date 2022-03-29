@@ -7,6 +7,8 @@ const context = canvas.getContext("2d");
 
 // Function to load the canvas with the gallows
 function initiateHangman() {
+
+    context.shadowColor = 'transparent';
     context.strokeStyle = '#444';
     context.lineWidth = 10; 
     context.beginPath();
@@ -29,13 +31,11 @@ function Draw(part) {
 
         case 'head':
           context.lineWidth = 5;
-
           context.strokeStyle = '#00ff00';
           context.shadowColor = '#00ff00';
           context.shadowBlur = 20;
           context.shadowOffsetX = 0;
           context.shadowOffsetY = 0;
-
           context.beginPath();
           context.arc(100, 50, 25, 0, Math.PI*2, true);
           context.closePath();
@@ -44,7 +44,6 @@ function Draw(part) {
           break;
         
         case 'body':
-            
           context.strokeStyle = '#00ffff';
           context.shadowColor = '#00ffff';
           context.beginPath();
@@ -54,8 +53,8 @@ function Draw(part) {
           break;
   
         case 'rightHarm':
-            context.strokeStyle = '#ff8000';
-            context.shadowColor = '#ff8000';
+          context.strokeStyle = '#ff8000';
+          context.shadowColor = '#ff8000';
           context.beginPath();
           context.moveTo(100, 85);
           context.lineTo(60, 100);
@@ -63,8 +62,8 @@ function Draw(part) {
           break;
   
         case 'leftHarm':
-            context.strokeStyle = '#ff33ff';
-            context.shadowColor = '#ff33ff';
+          context.strokeStyle = '#ff33ff';
+          context.shadowColor = '#ff33ff';
           context.beginPath();
           context.moveTo(100, 85);
           context.lineTo(140, 100);
@@ -72,8 +71,8 @@ function Draw(part) {
           break;
   
         case 'rightLeg':
-            context.strokeStyle = '#ffff00';
-            context.shadowColor = '#ffff00';
+          context.strokeStyle = '#ffff00';
+          context.shadowColor = '#ffff00';
           context.beginPath();
           context.moveTo(100, 140);
           context.lineTo(80, 190);
@@ -82,8 +81,8 @@ function Draw(part) {
   
   
         case 'leftLeg':
-            context.strokeStyle = '#ff0000';
-            context.shadowColor = '#ff0000';
+          context.strokeStyle = '#ff0000';
+          context.shadowColor = '#ff0000';
           context.beginPath();
           context.moveTo(100, 140);
           context.lineTo(125, 190);
@@ -110,7 +109,7 @@ function drawHangman() {
 }
 
   
-function clearCanvas() {
+function newHangman() {
     clearCanvas()
     step = 0
   }
