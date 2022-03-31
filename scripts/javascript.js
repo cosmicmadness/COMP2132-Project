@@ -1,6 +1,7 @@
-/*-------------------------------------------
-JavaScript file for Project
----------------------------------------------*/
+/*--------------------------------------------------------------
+Description: JavaScript Main File for COMP 2132 Project
+Author: Joanne Quan
+---------------------------------------------------------------*/
 
 
 // Get HTML elements for the keyboard keys
@@ -72,23 +73,18 @@ const numGuessesLeft = document.getElementById("numberGuesses");
 const totalGuesses = document.getElementById("totalGuesses");
 const playOutcome = document.getElementById("play-outcome");
 
-
 // Popup
 const popup = document.getElementById("popup");
 const popupContainer = document.getElementById("popup-container");
-const closeButton = document.getElementById("close-button");
+const cancelButton = document.getElementById("cancel-button");
 const playAgainButton = document.getElementById("play-again-button");
-
-
 
 // Initiate some starting variables
 let chosenWord = "";
 let totalLife = 6;
 let currentLife = 6;
-
 totalGuesses.innerHTML = totalLife;
 numGuessesLeft.innerHTML = currentLife;
-
 let opacity = 0;
 let opacityHandler;
 let popupHandler;
@@ -97,6 +93,10 @@ let popupHandler;
 let numCorrectLetters = 0;
 let indicesLength = 0;
 
+// Hangman 
+let hangmanImagecounter = 1;
+const $hangmanImage =  $("#hangman");
+
 
 /*-------------------------------------------
 Start the game when the browser loads
@@ -104,10 +104,15 @@ Start the game when the browser loads
 startGame();
 
 
-
 /*-------------------------------------------
 Functions
 ---------------------------------------------*/
+
+// Function to draw hangman
+function drawHangman(imageNumber) {
+    imageSrc = "images/hangman" + imageNumber + ".png";
+    $hangmanImage.attr("src", imageSrc);
+}
 
 // Function to randomly pick a word from a word bank
 // Display boxes to represent the number of letters in the word
@@ -128,7 +133,8 @@ function randomWord() {
 
 // Function to reset the game
 function startGame() {
-    newHangman();
+    hangmanImagecounter = 1;
+    drawHangman(1);
     totalLife = 6;
     currentLife = 6;
     numCorrectLetters = 0;
@@ -195,9 +201,6 @@ function startGame() {
 
     // Run the randomWord function to select a word for the game
     randomWord();
-
-    // Draw the gallows when the game starts
-    initiateHangman();
 }
 
 // Function to check if the guess was correct
@@ -207,8 +210,9 @@ function guessLetter() {
         revealLetter(guessedLetter);
         disableKey(guessedLetter);
     } else {
+        hangmanImagecounter++;
         reduceLife();
-        drawHangman();
+        drawHangman(hangmanImagecounter);
         disableKey(guessedLetter);
     }
 }
@@ -282,12 +286,12 @@ function displayGameOverMessage(outcome) {
 }
 
 
-// Click the close button to dismiss the popup
-closeButton.addEventListener("click", function() {
+// Click the close button to dismiss the popup, but don't restart the game
+// Keep the popup container on the screen so the user can't interact with any elements
+cancelButton.addEventListener("click", function() {
     clearTimeout(popupHandler);
     clearInterval(opacityHandler);
     popup.style.opacity = 0;
-    popupContainer.style.display = "none";
 });
 
 // Click the Play Again button to start the game again

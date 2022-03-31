@@ -1,0 +1,233 @@
+/*--------------------------------------------------------------
+Description: CSS for COMP 2132 Project
+Author: Joanne Quan
+Sources:
+- Neon effect: https://css-tricks.com/how-to-create-neon-text-with-css/
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Define parameters
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Define mixins
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Begin CSS
+---------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.45em;
+  background-color: #010a01;
+}
+
+header {
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+  height: 70px;
+  background-color: #000;
+}
+
+header h1 {
+  padding: 20px;
+}
+
+h2 {
+  border-bottom: 1px solid #000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 30px;
+  }
+
+  .keys {
+    font-size: 12pt;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+  }
+}
+#title {
+  color: #ffffff;
+  font-family: "Vibur", sans-serif;
+  font-size: 40pt;
+  -webkit-animation: pulsate 1.5s infinite alternate;
+          animation: pulsate 1.5s infinite alternate;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.2rem #bc13fe;
+}
+
+@-webkit-keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}
+.item-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+.guess-container {
+  border: 1px solid blue;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #010a01;
+}
+
+.guess-container > p {
+  margin: 0px;
+}
+
+.neonText {
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  background-color: #010a01;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.2rem #bc13fe;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
+
+.neonText:hover {
+  background-color: #010a01;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, inset 0 0 0.2rem #11FFEE;
+}
+
+.neonText:disabled {
+  background-color: #010a01;
+  border: 1px solid grey;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #010a01, 0 0 0.5rem #010a01, 0 0 0.5rem #010a01, inset 0 0 0.2rem #010a01;
+}
+
+.keys-row {
+  display: flex;
+  justify-content: center;
+}
+
+.keys {
+  font-size: 18pt;
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+}
+
+.keys:hover {
+  color: #11FFEE;
+}
+
+#guess {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#hint {
+  color: #ffffff;
+}
+
+#numGuesses {
+  color: #ffffff;
+}
+
+.letter-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #161E8A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+}
+
+.letter {
+  font-size: 24pt;
+  color: #ffffff;
+}
+
+#popup-container {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+#popup {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 320px;
+  min-width: 300px;
+  margin: auto;
+  background-color: #010a01;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, inset 0 0 0.2rem #11FFEE;
+}
+
+#popup-header {
+  background-color: #161E8A;
+  padding-left: 10px;
+  height: 40px;
+}
+
+#popup-header h3 {
+  padding: 10px;
+  margin: 0px;
+  color: #fff;
+}
+
+#popup-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, inset 0 0 0.2rem #11FFEE;
+}
+
+.popup-button:hover {
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, 0 0 0.5rem #11FFEE, inset 0 0 0.2rem #11FFEE;
+  background-color: #11FFEE;
+}

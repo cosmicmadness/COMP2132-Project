@@ -33,31 +33,7 @@ h2{
 	border-bottom: 1px solid #000;
 }
 
-.intro {
-	text-align: center;
-}
 
-/*
-button {
-	background-color: #010a01;
-	border: none;
-}
-
-button:disabled {
-	background-color: #010a01;
-	border-radius: 5px;
-	box-shadow: 0 0 .2rem #010a01,
-              0 0 .2rem #010a01,
-              0 0 0.5rem #010a01,
-              0 0 0.5rem #010a01,
-              0 0 0.5rem #010a01,
-              inset 0 0 0.2rem #010a01;
-}
-
-button:disabled:hover {
-	background-color: #010a01;
-}
-*/
 
 
 .container {
@@ -170,18 +146,6 @@ button:disabled:hover {
 	color: #fff;
 	border-radius: 50%;
 	border: none;
-	
-	/*
-	text-shadow:
-	  0 0 7px #fff,
-	  0 0 10px #fff,
-	  0 0 21px #fff,
-	  0 0 42px #11FFEE,
-	  0 0 82px #11FFEE,
-	  0 0 92px #11FFEE,
-	  0 0 100px #11FFEE,
-	  0 0 100px #11FFEE;
-	  */
 
 	  background-color: #010a01;
 	  box-shadow: 0 0 .2rem #fff,
@@ -226,10 +190,6 @@ button:disabled:hover {
 }
 
 
-button:hover {
-	/*background-color: #808080;*/
-	
-}
 
 
 

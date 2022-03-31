@@ -8,11 +8,11 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/project.css">
+	<link rel="stylesheet" type="text/css" href="css/project-sass.css">
 	<style>
 	</style>
     <script src="scripts/jquery-3.4.1.min.js" defer></script>
-    <script src="scripts/hangman_script.js" defer="defer"></script>
+    <script src="scripts/hangman.js" defer="defer"></script>
 	<script src="scripts/javascript.js" defer="defer"></script>
 
 
@@ -27,12 +27,13 @@
 
 	<div class="container">
 
-        <div class="item-container">
+        <div class="title-container">
             <p id="title">Hangman</p>
         </div>
 
-        <canvas id="hangman" width="180" height="250">
-        </canvas>
+        <div class="hangman-container" width="180" height="250">
+            <img id="hangman" src="images/hangman1.png">
+        </div>
 
         <div class="guess-container">
             <div id="guess">
@@ -84,11 +85,10 @@
             <div id="popup">
                 <div id="popup-header">
                     <h3 id="play-outcome"></h3>
-                    <button id="close-button">X</button>
                 </div>
                 <div id="popup-body">
-                    <p>To rotate the view of the bike click on the 'Start' animation button. Stop the animation by clicking the 'Stop' button.</p>
-                    <button id="play-again-button" class="neonText">Play Again</button>
+                    <button id="play-again-button" class="popup-button">Play Again</button>
+                    <button id="cancel-button" class="popup-button">Cancel</button>
                 </div>
             </div>
         </div>
